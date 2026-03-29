@@ -9,9 +9,9 @@ import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Toolti
 const COLORS = ['#255ff1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
 
 export default function AdminDashboard() {
-  const { data: venues = [] } = useQuery({ queryKey: ['venues'], queryFn: () => Venue.list(), initialData: [] });
-  const { data: reports = [] } = useQuery({ queryKey: ['class-rep-reports'], queryFn: () => ClassRepresentativeReport.list('-created_at'), initialData: [] });
-  const { data: proposals = [] } = useQuery({ queryKey: ['proposed-venues'], queryFn: () => ProposedVenue.list('-created_at'), initialData: [] });
+  const { data: venues = [] } = useQuery({ queryKey: ['venues'], queryFn: () => Venue.list() });
+  const { data: reports = [] } = useQuery({ queryKey: ['class-rep-reports'], queryFn: () => ClassRepresentativeReport.list('-created_at') });
+  const { data: proposals = [] } = useQuery({ queryKey: ['proposed-venues'], queryFn: () => ProposedVenue.list('-created_at') });
 
   const totalAdhesions = Array.isArray(reports) ? reports.reduce((s, r) => s + (r.adhesions_count || 0), 0) : 0;
 
