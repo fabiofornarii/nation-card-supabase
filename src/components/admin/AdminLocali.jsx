@@ -33,7 +33,6 @@ export default function AdminLocali() {
   const { data: venues = [], isLoading } = useQuery({
     queryKey: ['venues'],
     queryFn: () => Venue.list('name'),
-    initialData: [],
   });
 
   const createMutation = useMutation({
