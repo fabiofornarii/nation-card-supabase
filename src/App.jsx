@@ -17,6 +17,7 @@ function App() {
         <Routes>
           {/* Pages with main layout */}
           <Route path="/" element={<Layout currentPageName="Home"><Home /></Layout>} />
+          <Route path="/NationCard" element={<Navigate to="/" replace />} />
           <Route path="/ProposeVenue" element={<Layout currentPageName="ProposeVenue"><ProposeVenue /></Layout>} />
           <Route path="/ClassRepReport" element={<Layout currentPageName="ClassRepReport"><ClassRepReport /></Layout>} />
 
